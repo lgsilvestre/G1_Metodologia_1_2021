@@ -41,7 +41,6 @@ public class FXMLController implements Initializable {
             ventanaMultiMedia.setMediaPlayer(mediaPlayer);
             mediaPlayer.setAutoPlay(true);
             mediaPlayer.volumeProperty().bindBidirectional(volumen.valueProperty());
-            
     }    
 
     @FXML
