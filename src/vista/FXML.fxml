@@ -8,11 +8,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="705.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLController">
    <children>
-      <Button layoutX="75.0" layoutY="657.0" mnemonicParsing="false" onAction="#Play" prefHeight="26.0" prefWidth="114.0" text="Play" />
-      <Button layoutX="260.0" layoutY="657.0" mnemonicParsing="false" onAction="#Pause" prefHeight="26.0" prefWidth="114.0" text="Pause" />
+      <Button fx:id="PlayPause" layoutX="75.0" layoutY="657.0" mnemonicParsing="false" onAction="#PlayPause" prefHeight="26.0" prefWidth="114.0" />
       <Button layoutX="790.0" layoutY="656.0" mnemonicParsing="false" onAction="#Stop" prefHeight="26.0" prefWidth="114.0" text="Stop" />
       <Slider fx:id="volumen" blockIncrement="0.05" layoutX="585.0" layoutY="664.0" max="1.0" />
-      <Label layoutX="435.0" layoutY="660.0" prefHeight="18.0" prefWidth="65.0" text="  volumen" />
-      <MediaView fx:id="ventanaMultiMedia" fitHeight="620.0" fitWidth="900.0" layoutX="29.0" layoutY="14.0" />
+      <Label layoutX="446.0" layoutY="662.0" prefHeight="18.0" prefWidth="75.0" text="  volumen" />
+      <MediaView fx:id="ventanaMultiMedia" fitHeight="620.0" fitWidth="900.0" layoutX="25.0" layoutY="14.0" />
+      <Slider fx:id="slider_tiempo" layoutX="77.0" layoutY="634.0" max="1.0" prefHeight="14.0" prefWidth="830.0" />
    </children>
 </AnchorPane>

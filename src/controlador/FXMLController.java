@@ -1,13 +1,12 @@
+package controlador;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
 
 import java.io.File;
 import java.net.URL;
-import java.time.Duration;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +16,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -28,10 +28,16 @@ public class FXMLController implements Initializable {
     Media video;
     MediaPlayer mediaPlayer;
     
+    boolean play;
+    
     @FXML
     private MediaView ventanaMultiMedia;
     @FXML
     private Slider volumen;
+    @FXML
+    private Slider slider_tiempo;
+    @FXML
+    private Button PlayPause;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -39,25 +45,40 @@ public class FXMLController implements Initializable {
             video = new Media(archivo.toURI().toString());
             mediaPlayer = new MediaPlayer(video);
             ventanaMultiMedia.setMediaPlayer(mediaPlayer);
+            mediaPlayer.setOnReady(() -> {
+                slider_tiempo.setMax(mediaPlayer.getTotalDuration().toSeconds());
+                slider_tiempo.valueProperty().addListener((p, o, value) -> {
+                    if (slider_tiempo.isPressed()) {
+                        mediaPlayer.seek(Duration.seconds(value.doubleValue()));
+                    }
+            });
+            mediaPlayer.currentTimeProperty().addListener((p, o, value) -> {
+                slider_tiempo.setValue(value.toSeconds());
+            });
+        });
+            play=true;
             mediaPlayer.setAutoPlay(true);
+            PlayPause.setText("Pause");
             mediaPlayer.volumeProperty().bindBidirectional(volumen.valueProperty());
     }    
 
     @FXML
-    private void Play(ActionEvent event) {
-        System.out.println("play");
-        mediaPlayer.play();
+    private void PlayPause(ActionEvent event) {
+        if(play){
+            mediaPlayer.pause();
+            PlayPause.setText("Play");
+            play=!play;
+        }
+        else{
+            mediaPlayer.play();
+            PlayPause.setText("Pause");
+            play=!play;
+        }
     }
-
-    @FXML
-    private void Pause(ActionEvent event) {
-        System.out.println("pause");
-        mediaPlayer.pause();
-    }    
 
     @FXML
     private void Stop(ActionEvent event) {
-        System.out.println("Stop");
         mediaPlayer.stop();
     }
+
 }
