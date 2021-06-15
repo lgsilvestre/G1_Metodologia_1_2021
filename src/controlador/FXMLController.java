@@ -59,6 +59,7 @@ public class FXMLController implements Initializable {
             play=true;
             mediaPlayer.setAutoPlay(true);
             PlayPause.setText("Pause");
+            volumen.setValue(0.60);
             mediaPlayer.volumeProperty().bindBidirectional(volumen.valueProperty());
     }    
 
@@ -79,6 +80,8 @@ public class FXMLController implements Initializable {
     @FXML
     private void Stop(ActionEvent event) {
         mediaPlayer.stop();
+        PlayPause.setText("Play");
+        play=!play;
     }
 
 }
