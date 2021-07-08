@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
-
+package vista;
+import controlador.*;
+import javax.swing.*;
 /**
  *
  * @author NVME
@@ -164,6 +165,15 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotonActionPerformed
         // TODO add your handling code here:
+        if(nombreUsuario.getText().equals("")|| passUsuario.getText().equals("")){
+                    JOptionPane.showMessageDialog(null,"Algún campo esta vacio");
+                }
+                if (nombreUsuario.getText().equals("admin")&& passUsuario.getText().equals("admin")){
+                    JOptionPane.showMessageDialog(null,"Has ingresado a tu cuenta ");
+                }
+                else if (!nombreUsuario.getText().equals("") && !passUsuario.getText().equals("")){
+                    JOptionPane.showMessageDialog(null,"Usuario o clave incorrecta");             
+                }
     }//GEN-LAST:event_loginBotonActionPerformed
 
     private void passUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passUsuarioActionPerformed

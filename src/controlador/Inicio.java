@@ -22,6 +22,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+import vista.*;
 
 /**
  *
@@ -50,7 +51,9 @@ public class Inicio extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        Login hola = new Login();
+        hola.setVisible(true);
+        //launch(args);
     }
     
     
