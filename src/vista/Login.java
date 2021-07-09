@@ -18,6 +18,9 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
+    public String retornar(){
+        return opcion;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         passUsuario = new javax.swing.JTextField();
         loginBoton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        crearCuenta = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reproductor");
@@ -43,6 +46,11 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setToolTipText("");
+        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                jPanel1ComponentResized(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(48, 48, 48));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -89,17 +97,17 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Login/Imagen2.png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
-        crearCuenta.setBackground(new java.awt.Color(24, 24, 24));
-        crearCuenta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        crearCuenta.setForeground(new java.awt.Color(236, 204, 0));
-        crearCuenta.setText("Crear cuenta");
-        crearCuenta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        crearCuenta.setBorderPainted(false);
-        crearCuenta.setContentAreaFilled(false);
-        crearCuenta.setOpaque(true);
-        crearCuenta.addActionListener(new java.awt.event.ActionListener() {
+        salir.setBackground(new java.awt.Color(24, 24, 24));
+        salir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        salir.setForeground(new java.awt.Color(236, 204, 0));
+        salir.setText("Salir");
+        salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.setOpaque(true);
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearCuentaActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
 
@@ -109,7 +117,7 @@ public class Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(crearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
@@ -143,7 +151,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(crearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54))
         );
 
@@ -170,6 +178,7 @@ public class Login extends javax.swing.JFrame {
                 }
                 if (nombreUsuario.getText().equals("admin")&& passUsuario.getText().equals("admin")){
                     JOptionPane.showMessageDialog(null,"Has ingresado a tu cuenta ");
+                    opcion = "logeado";
                 }
                 else if (!nombreUsuario.getText().equals("") && !passUsuario.getText().equals("")){
                     JOptionPane.showMessageDialog(null,"Usuario o clave incorrecta");             
@@ -184,9 +193,14 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreUsuarioActionPerformed
 
-    private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_crearCuentaActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void jPanel1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1ComponentResized
 
     /**
      * @param args the command line arguments
@@ -222,9 +236,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
+    private String opcion = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton crearCuenta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,5 +245,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton loginBoton;
     private javax.swing.JTextField nombreUsuario;
     private javax.swing.JTextField passUsuario;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

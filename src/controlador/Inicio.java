@@ -23,13 +23,14 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import vista.*;
+import java.lang.*;
 
 /**
  *
  * @author josec
  */
 public class Inicio extends Application {
-
+     
     ProgressBar bar;
     Stage stage;
 
@@ -50,10 +51,17 @@ public class Inicio extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Login hola = new Login();
-        hola.setVisible(true);
-        //launch(args);
+    public static void main(String[] args) throws InterruptedException {
+        Login iniLogin = new Login();
+        iniLogin.setLocationRelativeTo(null);
+        iniLogin.setVisible(true);
+        do{
+            Thread.sleep(400);
+            if(iniLogin.retornar().equals("logeado")){
+                iniLogin.setVisible(false);
+                launch(args);
+            }            
+        }while(!iniLogin.retornar().equals("logeado"));
     }
     
     

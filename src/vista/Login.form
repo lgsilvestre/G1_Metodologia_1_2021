@@ -47,13 +47,16 @@
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="componentResized" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="jPanel1ComponentResized"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="crearCuenta" min="-2" pref="89" max="-2" attributes="0"/>
+                  <Component id="salir" min="-2" pref="89" max="-2" attributes="0"/>
                   <EmptySpace pref="89" max="32767" attributes="0"/>
                   <Component id="loginBoton" min="-2" pref="89" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -93,7 +96,7 @@
                   <EmptySpace pref="89" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="loginBoton" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="crearCuenta" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="salir" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
@@ -194,7 +197,7 @@
             <Property name="text" type="java.lang.String" value="jLabel3"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="crearCuenta">
+        <Component class="javax.swing.JButton" name="salir">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="18" green="18" red="18" type="rgb"/>
@@ -205,7 +208,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="ec" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Crear cuenta"/>
+            <Property name="text" type="java.lang.String" value="Salir"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -216,7 +219,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearCuentaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
