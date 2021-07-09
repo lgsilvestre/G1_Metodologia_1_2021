@@ -1,0 +1,4 @@
+nombre con apellido,director,ReferenciaUbicacionVideo,ReferenciaUbicacionMiniatura,generos1,genero2,generoETC
+nombre1,director1,ReferenciaUbicacionVideo1,ReferenciaUbicacionMiniatura1,generos1,genero2,generoOtro
+nombre3,director2,ReferenciaUbicacionVideo2,ReferenciaUbicacionMiniatura2,generos1,genero2,generoETC
+nombre3,director3,ReferenciaUbicacionVideo3,ReferenciaUbicacionMiniatura3,generos1,genero2,generoETC

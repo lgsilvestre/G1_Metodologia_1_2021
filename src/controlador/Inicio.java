@@ -1,26 +1,11 @@
 package controlador;
 
-import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.application.Preloader;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import vista.*;
 import java.lang.*;
@@ -30,16 +15,17 @@ import java.lang.*;
  * @author josec
  */
 public class Inicio extends Application {
-     
+
     ProgressBar bar;
     Stage stage;
+    
+    static datosMedea modelos;
 
     
     private Scene createPreloaderScene() throws IOException{
-        System.out.println("1");
-        Parent root = FXMLLoader.load(Inicio.class.getResource("/vista/FXML.fxml"));
-        return new Scene(root, 950, 705); 
-    }
+        Parent root = FXMLLoader.load(Inicio.class.getResource("/vista/ventanaReproductor.fxml"));
+        return new Scene(root); 
+    } 
     
     @Override
     public void start(Stage stage) throws Exception {
