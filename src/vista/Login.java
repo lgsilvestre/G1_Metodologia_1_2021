@@ -5,6 +5,8 @@
  */
 package vista;
 import controlador.*;
+import java.io.File;
+import java.util.Scanner;
 import javax.swing.*;
 /**
  *
@@ -173,16 +175,27 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotonActionPerformed
         // TODO add your handling code here:
-        if(nombreUsuario.getText().equals("")|| passUsuario.getText().equals("")){
+         try{
+            x = new Scanner(new File("C:\\Users\\NVME\\Documents\\NetBeansProjects\\G1_Metodologia_1_2021\\src\\vista","Cuentas.txt"));
+            x.useDelimiter("[,\n]");
+            while(x.hasNext()&&opcion!="logeado"){
+                usuario = x.next();
+                clave = x.next();
+                if(nombreUsuario.getText().equals("")|| passUsuario.getText().equals("")){
                     JOptionPane.showMessageDialog(null,"Algún campo esta vacio");
                 }
-                if (nombreUsuario.getText().equals("admin")&& passUsuario.getText().equals("admin")){
-                    JOptionPane.showMessageDialog(null,"Has ingresado a tu cuenta ");
+                if (nombreUsuario.getText().equals(usuario.trim())&& passUsuario.getText().equals(clave.trim())){
+                    JOptionPane.showMessageDialog(null, usuario.trim()+" has ingresado a tu cuenta ");
                     opcion = "logeado";
                 }
                 else if (!nombreUsuario.getText().equals("") && !passUsuario.getText().equals("")){
                     JOptionPane.showMessageDialog(null,"Usuario o clave incorrecta");             
                 }
+                x.close();
+            }
+        }catch(Exception e){
+            System.out.println("Error al leer archivo");
+        }
     }//GEN-LAST:event_loginBotonActionPerformed
 
     private void passUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passUsuarioActionPerformed
@@ -236,6 +249,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
+    private String usuario = "";
+    private String clave = "";
+    private Scanner x;
     private String opcion = "";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
