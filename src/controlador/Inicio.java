@@ -9,7 +9,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 import vista.*;
 import java.lang.*;
-
+import modelo.datosMedea;
 /**
  *
  * @author josec
