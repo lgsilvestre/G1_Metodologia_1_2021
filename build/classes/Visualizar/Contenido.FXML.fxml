@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="196.0" fitWidth="200.0">
                <image>
-                  <Image url="@../logos/logo.png" />
+                  <Image url="@../../../G1_Metodologia_1_2021-master/Media/Iconos/logo2.png" />
                </image>
             </ImageView>
             <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: ORANGE; -fx-text-fill: YELLOW; -fx-background-color: BLACK;" text="SERIES">
@@ -60,12 +60,12 @@
             </TextField>
             <ImageView>
                <image>
-                  <Image url="@../logos/bell.png" />
+                  <Image url="@../../../G1_Metodologia_1_2021-master/Media/Iconos/bell.png" />
                </image>
             </ImageView>
             <ImageView>
                <image>
-                  <Image url="@../logos/user.png" />
+                  <Image url="@../../../G1_Metodologia_1_2021-master/Media/Iconos/user.png" />
                </image>
             </ImageView>
          </children>

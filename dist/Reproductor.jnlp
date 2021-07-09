@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Reproductor.jar" size="3475" download="eager" />
+    <jar href="Reproductor.jar" size="64430" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Reproductor" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="controlador.Inicio"  name="Reproductor" />
+  <jfx:javafx-desc  width="800" height="600" main-class="Visualizar.JavaFXApplication1"  name="Reproductor" />
   <update check="always"/>
 </jnlp>
