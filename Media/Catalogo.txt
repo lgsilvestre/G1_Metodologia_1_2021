@@ -1,5 +1,0 @@
-Dia de entrenamiento,Antoine Fuqua,ubicacion,ubicacionMiniatura,crimen,thriller,2001
-Cadena perpetua,Frank Darabont,ubicacion,ubicacionMiniatura,crimen,drama,1994
-El conjuro,James Wan,ubicacion,ubicacionMiniatura,horror,thriller,2013
-Prisioneros,Denis Villeneuve,ubicacion,ubicacionMiniatura,crimen,thriller,2013
-Muertos de risa,Edgar Wright,ubicacion,ubicacionMiniatura,horror,comedia,2004
