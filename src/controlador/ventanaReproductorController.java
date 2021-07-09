@@ -23,8 +23,7 @@ import javafx.util.Duration;
  *
  * @author josec
  */
-public class ventanaResproductorController implements Initializable {
-    public String NOMBRE_ARCHIVO = "Raiden Rap Shuumatsu no Valkyrie.mp4";
+public class ventanaReproductorController implements Initializable {
     Media video;
     MediaPlayer mediaPlayer;
     
@@ -41,10 +40,14 @@ public class ventanaResproductorController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-            File archivo = new File(NOMBRE_ARCHIVO);
-            video = new Media(archivo.toURI().toString());
-            mediaPlayer = new MediaPlayer(video);
-            ventanaMultiMedia.setMediaPlayer(mediaPlayer);
+
+    }    
+
+    public void iniciaReproducion(String NOMBRE_ARCHIVO){
+        File archivo = new File(NOMBRE_ARCHIVO);
+        video = new Media(archivo.toURI().toString());
+        mediaPlayer = new MediaPlayer(video);
+        ventanaMultiMedia.setMediaPlayer(mediaPlayer);
             mediaPlayer.setOnReady(() -> {
                 slider_tiempo.setMax(mediaPlayer.getTotalDuration().toSeconds());
                 slider_tiempo.valueProperty().addListener((p, o, value) -> {
@@ -61,8 +64,8 @@ public class ventanaResproductorController implements Initializable {
             PlayPause.setText("Pause");
             volumen.setValue(0.60);
             mediaPlayer.volumeProperty().bindBidirectional(volumen.valueProperty());
-    }    
-
+    }
+    
     @FXML
     private void PlayPause(ActionEvent event) {
         if(play){
