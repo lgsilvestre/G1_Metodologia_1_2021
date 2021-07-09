@@ -7,22 +7,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
+import modelo.datosMedea;
 
 /**
  *
  * @author josec
  */
 public class Inicio extends Application {
-
+    
     ProgressBar bar;
     Stage stage;
+    
+    static datosMedea modelos;
 
     
     private Scene createPreloaderScene() throws IOException{
-        System.out.println("1");
-        Parent root = FXMLLoader.load(Inicio.class.getResource("/vista/FXML.fxml"));
-        return new Scene(root, 950, 705); 
-    }
+        Parent root = FXMLLoader.load(Inicio.class.getResource("/vista/ventanaReproductor.fxml"));
+        return new Scene(root); 
+    } 
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -35,6 +37,7 @@ public class Inicio extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        modelos = new datosMedea();
         launch(args);
     }
     
