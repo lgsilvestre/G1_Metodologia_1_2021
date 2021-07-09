@@ -1,0 +1,7 @@
+Los 80,Boris Quercia,Media\Peliculas\Los 80,Media\Caratulas\Los 80,drama,comedia,2008
+Heroes,Esteban Vidal,Media\Peliculas\Heroes,Media\Caratulas\Heroes,comedia,accion,2014
+Dawson,Miguel Littin,Media\Peliculas\Dawson,Media\Caratulas\Dawson,drama,suspenso,2009
+Machuca,Andres Wood,Media\Peliculas\Machuca,Media\Caratulas\Machuca,drama,historica,2004
+El club,Pablo Larrain,Media\Peliculas\El club,Media\Caratulas\El club,drama,suspenso,2015
+Violeta,Andres Wood,Media\Peliculas\Violeta,Media\Caratulas\Violeta,drama,musical,2011
+31 Minutos,Alvaro Diaz,Media\Peliculas\31 minutos,Media\Caratulas\31 Minutos,aventura,comedia,2008
